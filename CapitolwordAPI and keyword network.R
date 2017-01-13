@@ -16,8 +16,6 @@ for (h in 1:nrow(legislator_names)) {
 temp2 <- cw_dates(phrase = 'have', congress = '111', bioguide_id = 'H000981', granularity = 'year')
 length(unique(all_words))
 
-legislator_names <- `111_bioguide`
-
 result <- as.data.frame(matrix(nrow = nrow(legislator_names), ncol = length(unique(all_words))))
 colnames(result) <- unique(all_words)
 
@@ -63,11 +61,6 @@ for (h in 1:nrow(legislator_names)) {
         +     result_1[h,legislator_words[word]] <- b_means
         +   }
     + }
-
-
-df_111 <- data.frame(row.names = `111_bioguide`[,1],index=1:433)
-df_111['a'] <- 1:433
-
 
 legislator_names <- as.data.frame(legislator_names)
 final <- as.data.frame(matrix(nrow = nrow(legislator_names), ncol = nrow(legislator_names)))
